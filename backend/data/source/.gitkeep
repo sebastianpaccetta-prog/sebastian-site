@@ -1,0 +1,12 @@
+Drop your source documents here:
+
+- resume.pdf
+- career-deck.pptx
+- 180dc-project-1.pdf
+- 180dc-project-2.pdf
+- ...
+- 180dc-project-8.pdf
+
+Then run from the backend/ directory:
+
+    python -m app.ingest

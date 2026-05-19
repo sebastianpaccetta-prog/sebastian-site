@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #73b844;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-bg text-ink-900 antialiased;
+  font-feature-settings: "ss01", "cv11";
+}
+
+/* Selection styling */
+::selection {
+  background: #73b844;
+  color: #0f1115;
+}
+
+/* Subtle dotted background utility for hero */
+.bg-dots {
+  background-image: radial-gradient(rgba(15, 17, 21, 0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Underline-on-hover link, accent color */
+.link-accent {
+  @apply relative inline-flex items-center text-ink-900;
+}
+.link-accent::after {
+  content: "";
+  @apply absolute left-0 -bottom-0.5 h-px w-full bg-accent origin-right scale-x-0 transition-transform duration-300;
+}
+.link-accent:hover::after,
+.link-accent[aria-current="page"]::after {
+  @apply origin-left scale-x-100;
+}
+
+/* Section heading eyebrow */
+.eyebrow {
+  @apply inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.18em] text-ink-500;
+}
+.eyebrow::before {
+  content: "";
+  @apply inline-block h-px w-6 bg-accent;
+}
+
+/* Display heading */
+.h-display {
+  @apply font-display tracking-tighter2 text-ink-900;
+  font-feature-settings: "ss01";
+}
+
+/* Focus ring */
+:where(button, a, input, textarea):focus-visible {
+  @apply outline-none ring-2 ring-accent-ring ring-offset-2 ring-offset-bg;
+}
+
+/* Card hover lift */
+.card-lift {
+  @apply transition-all duration-300;
+}
+.card-lift:hover {
+  transform: translateY(-2px);
+  @apply shadow-soft;
+}
+
+/* Chat bubble typing cursor */
+.cursor-blink::after {
+  content: "▍";
+  @apply ml-0.5 text-accent animate-blink;
+}
