@@ -70,8 +70,7 @@ export default function Chat() {
         ...prev,
         {
           role: "assistant",
-          content:
-            "Sorry, I couldn't reach the AI service. Make sure the RAG backend is running on port 8000.",
+          content: `Sorry, something went wrong. ${err instanceof Error ? err.message : "Unknown error."}`,
         },
       ]);
     } finally {
