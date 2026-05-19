@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Pinecone } from "@pinecone-database/pinecone";
-import OpenAI from "openai";
+import OpenAI, { type ChatCompletionMessageParam } from "openai/resources/chat/completions";
 
 export const runtime = "nodejs";
 
@@ -33,13 +33,15 @@ function formatContext(matches: { metadata?: Record<string, unknown> }[]): strin
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const messages: { role: string; content: string }[] = body?.messages;
+    const messages: ChatCompletionMessageParam[] = body?.messages;
 
     if (!Array.isArray(messages) || messages.length === 0) {
       return NextResponse.json({ error: "messages[] required" }, { status: 400 });
     }
 
-    const lastUser = [...messages].reverse().find((m) => m.role === "user");
+    const lastUser = [...messages].reverse().find((m) => m.role === "user") as
+      | { role: "user"; content: string }
+      | undefined;
     if (!lastUser) {
       return NextResponse.json({ error: "no user message" }, { status: 400 });
     }
