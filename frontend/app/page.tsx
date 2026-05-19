@@ -54,7 +54,7 @@ export default function Home() {
                 <div className="relative aspect-[4/5] rounded-[1.5rem] overflow-hidden bg-bg-alt border border-bg-line">
                   {/* Replace /headshot.jpg with your actual headshot */}
                   <Image
-                    src="/headshot.jpg"
+                    src="/headshot.JPG"
                     alt="Sebastian"
                     fill
                     priority
