@@ -1,22 +1,12 @@
-# Web framework
-fastapi==0.115.0
-uvicorn[standard]==0.30.6
-pydantic==2.9.2
-python-dotenv==1.0.1
-
-# LangChain core
+# LangChain + OpenAI (for ingest script)
 langchain==0.3.3
 langchain-community==0.3.2
 langchain-openai==0.2.2
-langchain-chroma==0.1.4
+python-dotenv==1.0.1
 
-# Vector store
-chromadb==0.5.13
+# Pinecone vector store
+pinecone==5.0.1
 
 # Document loaders
 pypdf==5.0.1
 python-pptx==1.0.2
-unstructured==0.15.13
-
-# CORS for local dev
-starlette==0.38.6
