@@ -28,7 +28,7 @@ export default function About() {
         <div className="md:col-span-4 md:sticky md:top-24 self-start">
           <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-bg-alt border border-bg-line relative">
             <Image
-              src="/about-portrait.jpeg"
+              src="/about-portrait.JPG"
               alt="Sebastian"
               fill
               sizes="(min-width: 768px) 33vw, 100vw"
