@@ -5,6 +5,7 @@ export type Project = {
   tags: string[];
   image?: string;
   link?: string;
+  linkLabel?: string;
   pdf?: string;
   status?: "live" | "coming-soon";
 };
@@ -38,6 +39,7 @@ export const personalProjects: Project[] = [
     tags: ["Events", "Athletics"],
     image: "/projects/pickleball-midwest.jpg",
     link: "https://www.youtube.com/watch?v=egvGN5Pw0_g",
+    linkLabel: "View livestream",
     status: "live",
   },
 ];

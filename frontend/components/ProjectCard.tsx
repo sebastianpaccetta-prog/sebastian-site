@@ -62,7 +62,7 @@ export default function ProjectCard({ project }: { project: Project }) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-medium text-ink-900 hover:text-accent transition-colors"
             >
-              View project
+              {project.linkLabel ?? "View project"}
               <ArrowUpRight size={14} />
             </Link>
           ) : (
