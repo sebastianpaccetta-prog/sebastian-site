@@ -27,7 +27,8 @@ export const personalProjects: Project[] = [
       "I designed and developed a locally hosted, AI-powered application for the non-profit Wisdom for Humanity that utilizes Ollama to extract claims from interview transcripts and applies a custom physics-based formula to calculate a defensible Impact of Investment (IOI) metric.",
     tags: ["Strategy", "KPI Measurement", "Non-Profit", "Product"],
     image: "/projects/w4h-ioi.png",
-    status: "coming-soon",
+    link: "https://ioi-sable.vercel.app/",
+    status: "live",
   },
   {
     slug: "purdue-pickleball-midwest",
